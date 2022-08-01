@@ -10,3 +10,34 @@
   --orange: #F25F5C;
   --blue: #247BA0;
 }
+
+nav {
+  box-shadow: 0 2px 5px var(--gray);
+  width: 100%;
+  height: 10vh;
+}
+
+.nav-header {
+  color: var(--orange);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-categories {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-categories:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.nav-title {
+  font-family: 'Lobster', cursive;
+  font-size: 3.5em;
+}
