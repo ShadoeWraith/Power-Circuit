@@ -2,3 +2,11 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --gray: #50514F;
+  --yellow: #FFE066;
+  --green: #70C1B3;
+  --orange: #F25F5C;
+  --blue: #247BA0;
+}
