@@ -8,7 +8,9 @@ export default function Navbar() {
   return (
     <nav>
       <div className="nav-top">
-        <h1 className="nav-title">Krafty</h1>
+        <a href="/">
+          <h1 className="nav-title">Krafty</h1>
+        </a>
         <div className="search-bar">
           <input type="text" placeholder="Search for anything"></input>
           <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} />
