@@ -1,8 +1,20 @@
+import Home from "./pages/Home";
+import Product from "./pages/Product";
+import Checkout from "./pages/Checkout";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

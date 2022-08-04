@@ -2,3 +2,143 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --gray: #50514F;
+  --yellow: #FFE066;
+  --green: #70C1B3;
+  --orange: #F25F5C;
+  --blue: #247BA0;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  box-shadow: 0 2px 5px var(--gray);
+  width: 100%;
+  height: 10vh;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav-title {
+  font-family: 'Lobster', cursive;
+  font-size: 2.5em;
+  color: var(--orange);
+}
+
+.search-bar {
+  width: 50%;
+  margin: 0 20px;
+  display: flex;
+  position: relative; 
+  align-items: center;
+}
+
+.nav-top input {
+  font-size: 1.5em;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 3px solid var(--gray);
+  border-right: none;
+  padding: 0 10px;
+  width: 100%;
+  height: 40px;
+  background-color: #f1f1f1;
+  outline: none;
+  transition: .3s;
+}
+.nav-top input:focus {
+  background-color: white;
+  transition: .3s;
+}
+
+.search-icon { 
+  margin: 0 -15px;
+  background-color: white;
+  border: 3px solid var(--gray);
+  border-left: none;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 40px;
+  width: 75px;
+  transition: .3s;
+  background-color: #f1f1f1;
+}
+
+.search-icon:hover {
+  background-color: var(--green);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.nav {
+  color: var(--orange);
+}
+
+.nav-buttons {
+  margin: 10px;
+  font-size: .8em;
+}
+
+.nav-buttons button{
+  font-size: 1.75em;
+  background-color: transparent;
+  border: none;
+  transition: .2s ease-in;
+  margin: 5px 10px;
+  padding: 4px;
+}
+.nav-buttons button:nth-child(odd) {
+  height: 40px;
+  border-radius: 20px;
+}
+
+.nav-buttons button:nth-child(even) {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.nav-buttons button:hover {
+  background-color: var(--yellow);
+  transition: .2s ease-out;
+  cursor: pointer;
+}
+
+.nav-categories {
+  font-size: 1.15em;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-categories li {
+  margin: 0 15px;
+}
+
+.nav-categories li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+section {
+  width: 100%;
+  margin: auto;
+  align-items: center;
+}
+
+.page-header {
+  margin: auto;
+  width: 100%;
+}
+
