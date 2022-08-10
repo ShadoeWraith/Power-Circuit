@@ -23,7 +23,6 @@ body.light {
   --primary-color: var(--gray);
   --secondary-color: var(--yellow);
   --tertiary-color: var(--green);
-  --hover-color: var(--blue);
   --header-color: var(--orange);
 }
 
@@ -32,7 +31,6 @@ body.dark {
   --primary-color: var(--white);
   --secondary-color: var(--blue);
   --tertiary-color: var(--green);
-  --hover-color: var(--yellow);
   --header-color: var(--orange);
 }
 
@@ -126,6 +124,8 @@ nav {
 
 .nav-buttons {
   margin: 10px;
+  display: flex;
+  align-items: center;
   font-size: .8em;
 }
 
@@ -144,8 +144,8 @@ nav {
 }
 
 .nav-buttons button:nth-child(even) {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
@@ -157,23 +157,22 @@ nav {
 
 #darkMode {
   background: transparent url("./assets/moon.jpg") no-repeat center;
-  background-size: 30px 30px;
+  background-size: 28px 28px;
   width: 40px;
   height: 40px;
-  filter: grayscale(100%);
   border: none;
   border-radius: 50%;
 }
 
 #darkMode:hover{
   filter: none;
-  background-color: var(--hover-color);
+  background-color: var(--secondary-color);
   cursor: pointer;
 }
 
 #darkMode.clicked {
+  background-color: var(--secondary-color);
   filter: invert(99%) sepia(52%) saturate(2%) hue-rotate(316deg) brightness(110%) contrast(101%) !important;
-  background-color: var(--hover-color);
 }
 
 .nav-categories {
