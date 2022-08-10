@@ -10,6 +10,7 @@
   --green: #70C1B3;
   --orange: #F25F5C;
   --blue: #247BA0;
+  --card-text: #000000;
 }
 
 body {
@@ -155,7 +156,7 @@ nav {
 }
 
 #darkMode {
-  background: transparent url("./assets/moon.png") no-repeat center;
+  background: transparent url("./assets/moon.jpg") no-repeat center;
   background-size: 30px 30px;
   width: 40px;
   height: 40px;
@@ -200,7 +201,77 @@ section {
 }
 
 .page-header {
-  margin: auto;
-  width: 100%;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  outline: 5px solid var(--secondary-color);
+  background-color: var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  width: 400px;
+  height: 400px;
+  transition: ease-out 250ms;
+  opacity: 1;
+}
+
+.card:hover .card-image {
+  opacity: 0.4;
+}
+
+.card-text {
+  position: absolute;
+  font-size: 4em;
+  color: var(--white);
+  opacity: 0;
+  text-align: center;
+}
+
+.card:hover .card-text {
+  opacity: 1;
+}
+
+.card::after, 
+.card::before {
+  content: " ";
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.25em;
+  left: 1.25em;
+  right: 1.25em;
+}
+
+.card::before {
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  transition: ease-out 250ms;
+  transform: scale(0, 1);
+}
+
+.card::after {
+  border-right: 5px solid white;
+  border-left: 5px solid white;
+  transition: ease-out 250ms;
+  transform: scale(1, 0);
+}
+
+.card:hover::before {
+  transform: scale(1.03, 1);
+}
+
+.card:hover::after {
+  transform: scale(1, 1.03);
 }
 
