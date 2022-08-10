@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import DarkMode from "./DarkMode";
 
 import searchIcon from "../assets/search.svg";
 
@@ -36,6 +37,7 @@ export default function Navbar() {
           <button>
             <FontAwesomeIcon icon={faShoppingCart} />
           </button>
+          <DarkMode />
         </div>
       </div>
       <ul className="nav-categories">

@@ -4,6 +4,7 @@
 }
 
 :root {
+  --white: #ececec;
   --gray: #50514F;
   --yellow: #FFE066;
   --green: #70C1B3;
@@ -11,12 +12,35 @@
   --blue: #247BA0;
 }
 
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+body.light {
+  --background-color: var(--white);
+  --primary-color: var(--gray);
+  --secondary-color: var(--yellow);
+  --tertiary-color: var(--green);
+  --hover-color: var(--blue);
+  --header-color: var(--orange);
+}
+
+body.dark {
+  --background-color: var(--gray);
+  --primary-color: var(--white);
+  --secondary-color: var(--blue);
+  --tertiary-color: var(--green);
+  --hover-color: var(--yellow);
+  --header-color: var(--orange);
+}
+
 a {
   text-decoration: none;
 }
 
 nav {
-  box-shadow: 0 2px 5px var(--gray);
+  box-shadow: 0 2px 5px var(--primary-color);
   width: 100%;
   height: 10vh;
 }
@@ -31,7 +55,7 @@ nav {
 .nav-title {
   font-family: 'Lobster', cursive;
   font-size: 2.5em;
-  color: var(--orange);
+  color: var(--header-color);
 }
 
 .search-bar {
@@ -53,7 +77,7 @@ nav {
 .nav-top input {
   font-size: 1.5em;
   border-radius: 20px;
-  border: 3px solid var(--gray);
+  border: 3px solid var(--primary-color);
   padding: 0 10px;
   width: 22%;
   height: 40px;
@@ -75,7 +99,7 @@ nav {
   top: 0;
   margin: 0 -15px;
   background-color: white;
-  border: 3px solid var(--gray);
+  border: 3px solid var(--primary-color);
   border-left: none;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
@@ -85,7 +109,7 @@ nav {
 }
 
 .search-icon img:hover {
-  background-color: var(--green);
+  background-color: var(--tertiary-color);
   cursor: pointer;
   transition: .3s;
 }
@@ -105,6 +129,7 @@ nav {
 }
 
 .nav-buttons button{
+  color: var(--primary-color);
   font-size: 1.75em;
   background-color: transparent;
   border: none;
@@ -124,9 +149,30 @@ nav {
 }
 
 .nav-buttons button:hover {
-  background-color: var(--yellow);
+  background-color: var(--secondary-color);
   transition: .2s ease-out;
   cursor: pointer;
+}
+
+#darkMode {
+  background: transparent url("./assets/moon.png") no-repeat center;
+  background-size: 30px 30px;
+  width: 40px;
+  height: 40px;
+  filter: grayscale(100%);
+  border: none;
+  border-radius: 50%;
+}
+
+#darkMode:hover{
+  filter: none;
+  background-color: var(--hover-color);
+  cursor: pointer;
+}
+
+#darkMode.clicked {
+  filter: invert(99%) sepia(52%) saturate(2%) hue-rotate(316deg) brightness(110%) contrast(101%) !important;
+  background-color: var(--hover-color);
 }
 
 .nav-categories {
