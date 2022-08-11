@@ -4,11 +4,35 @@
 }
 
 :root {
+  --white: #ececec;
   --gray: #50514F;
   --yellow: #FFE066;
   --green: #70C1B3;
   --orange: #F25F5C;
   --blue: #247BA0;
+  --card-text: #000000;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  position: relative;
+}
+
+body.light {
+  --background-color: var(--white);
+  --primary-color: var(--gray);
+  --secondary-color: var(--yellow);
+  --tertiary-color: var(--green);
+  --header-color: var(--orange);
+}
+
+body.dark {
+  --background-color: var(--gray);
+  --primary-color: var(--white);
+  --secondary-color: var(--blue);
+  --tertiary-color: var(--green);
+  --header-color: var(--orange);
 }
 
 a {
@@ -16,13 +40,15 @@ a {
 }
 
 nav {
-  box-shadow: 0 2px 5px var(--gray);
+  box-shadow: 0 2px 5px var(--primary-color);
   width: 100%;
-  height: 10vh;
+  height: auto;
+  padding-bottom: 10px;
 }
 
 .nav-top {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -31,7 +57,7 @@ nav {
 .nav-title {
   font-family: 'Lobster', cursive;
   font-size: 2.5em;
-  color: var(--orange);
+  color: var(--header-color);
 }
 
 .search-bar {
@@ -53,7 +79,7 @@ nav {
 .nav-top input {
   font-size: 1.5em;
   border-radius: 20px;
-  border: 3px solid var(--gray);
+  border: 3px solid var(--primary-color);
   padding: 0 10px;
   width: 22%;
   height: 40px;
@@ -66,7 +92,7 @@ nav {
   border-right: none;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  width: 95%;
+  width: 45vw;
   transition: .8s;
 }
 
@@ -75,7 +101,7 @@ nav {
   top: 0;
   margin: 0 -15px;
   background-color: white;
-  border: 3px solid var(--gray);
+  border: 3px solid var(--primary-color);
   border-left: none;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
@@ -85,7 +111,7 @@ nav {
 }
 
 .search-icon img:hover {
-  background-color: var(--green);
+  background-color: var(--tertiary-color);
   cursor: pointer;
   transition: .3s;
 }
@@ -101,10 +127,13 @@ nav {
 
 .nav-buttons {
   margin: 10px;
+  display: flex;
+  align-items: center;
   font-size: .8em;
 }
 
 .nav-buttons button{
+  color: var(--primary-color);
   font-size: 1.75em;
   background-color: transparent;
   border: none;
@@ -118,15 +147,35 @@ nav {
 }
 
 .nav-buttons button:nth-child(even) {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
 .nav-buttons button:hover {
-  background-color: var(--yellow);
+  background-color: var(--secondary-color);
   transition: .2s ease-out;
   cursor: pointer;
+}
+
+#darkMode {
+  background: transparent url("./assets/moon.jpg") no-repeat center;
+  background-size: 28px 28px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+}
+
+#darkMode:hover{
+  filter: none;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+#darkMode.clicked {
+  background-color: var(--secondary-color);
+  filter: invert(99%) sepia(52%) saturate(2%) hue-rotate(316deg) brightness(110%) contrast(101%) !important;
 }
 
 .nav-categories {
@@ -140,11 +189,33 @@ nav {
 
 .nav-categories li {
   margin: 0 15px;
+  position: relative;
+}
+
+.nav-categories li::before,
+.nav-categories li::after {
+  content: "";
+  position: absolute;
+  width: auto;
+  height: 4.5px;
+  top: 32px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .nav-categories li:hover {
   cursor: pointer;
-  text-decoration: underline;
+}
+
+.nav-categories li::after {
+  background-color: var(--secondary-color);
+  transform: scale(0);
+  transition: ease-in-out 250ms;
+}
+
+.nav-categories li:hover::after {
+  transform: scale(1);
 }
 
 section {
@@ -154,7 +225,105 @@ section {
 }
 
 .page-header {
-  margin: auto;
-  width: 100%;
+  margin: 15px 0;
+  text-align: center;
 }
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  outline: 5px solid var(--secondary-color);
+  background-color: var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 15px;
+}
+
+.card-image {
+  width: 400px;
+  height: 400px;
+  transition: ease-out 250ms;
+  opacity: 1;
+}
+
+.card:hover {
+  box-shadow: 10px 10px 10px var(--gray);
+}
+
+.card:hover .card-image {
+  opacity: 0.4;
+}
+
+.card-text {
+  position: absolute;
+  font-size: 4em;
+  color: var(--white);
+  opacity: 0;
+  text-align: center;
+}
+
+.card:hover .card-text {
+  opacity: 1;
+}
+
+.card::after, 
+.card::before {
+  content: " ";
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.25em;
+  left: 1.25em;
+  right: 1.25em;
+}
+
+.card::before {
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  transition: ease-out 250ms;
+  transform: scale(0, 1);
+}
+
+.card::after {
+  border-right: 5px solid white;
+  border-left: 5px solid white;
+  transition: ease-out 250ms;
+  transform: scale(1, 0);
+}
+
+.card:hover::before {
+  transform: scale(1.03, 1);
+}
+
+.card:hover::after {
+  transform: scale(1, 1.03);
+}
+
+.footer {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  box-shadow: inset 0px 5px 3px -3px var(--primary-color);
+}
+
+.footer-content img{
+  filter: invert(91%) sepia(9%) saturate(157%) hue-rotate(340deg) brightness(94%) contrast(92%);
+  margin: 10px 15px;
+}
+
+body.light .footer-content img{
+  filter: invert(0%) sepia(94%) saturate(6%) hue-rotate(177deg) brightness(93%) contrast(100%);
+}
+
+body.light .footer-content img:hover, body.dark .footer-content img:hover {
+  filter: invert(46%) sepia(81%) saturate(860%) hue-rotate(322deg) brightness(96%) contrast(98%);
+}
