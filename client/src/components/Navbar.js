@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faShoppingCart,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+
+import searchIcon from "../assets/search.svg";
 
 export default function Navbar() {
+  const [isFocused, setIsFocused] = useState(false);
+
   return (
     <nav>
       <div className="nav-top">
@@ -12,8 +14,22 @@ export default function Navbar() {
           <h1 className="nav-title">Krafty</h1>
         </a>
         <div className="search-bar">
-          <input type="text" placeholder="Search for anything"></input>
-          <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} />
+          <label>
+            <input
+              type="text"
+              placeholder="Search for anything"
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+            ></input>
+            <button
+              type="submit"
+              className={`search-icon ${
+                isFocused ? "isVisible" : "notVisible"
+              }`}
+            >
+              <img src={searchIcon} alt="search"></img>
+            </button>
+          </label>
         </div>
         <div className="nav-buttons">
           <button type="button">Sign In</button>

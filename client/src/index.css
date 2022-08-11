@@ -35,6 +35,7 @@ nav {
 }
 
 .search-bar {
+  position: relative;
   width: 50%;
   margin: 0 20px;
   display: flex;
@@ -42,25 +43,36 @@ nav {
   align-items: center;
 }
 
+.search-bar label {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .nav-top input {
   font-size: 1.5em;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-radius: 20px;
   border: 3px solid var(--gray);
-  border-right: none;
   padding: 0 10px;
-  width: 100%;
+  width: 22%;
   height: 40px;
   background-color: #f1f1f1;
   outline: none;
-  transition: .3s;
+  transition: .8s;
 }
-.nav-top input:focus {
+.search-bar input:focus{
   background-color: white;
-  transition: .3s;
+  border-right: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  width: 95%;
+  transition: .8s;
 }
 
-.search-icon { 
+.search-icon img{ 
+  position: absolute;
+  top: 0;
   margin: 0 -15px;
   background-color: white;
   border: 3px solid var(--gray);
@@ -69,18 +81,22 @@ nav {
   border-top-right-radius: 20px;
   height: 40px;
   width: 75px;
-  transition: .3s;
   background-color: #f1f1f1;
 }
 
-.search-icon:hover {
+.search-icon img:hover {
   background-color: var(--green);
   cursor: pointer;
   transition: .3s;
 }
 
-.nav {
-  color: var(--orange);
+.isVisible {
+  visibility: visible;
+}
+
+.notVisible {
+  visibility: hidden;
+  transition: .1s;
 }
 
 .nav-buttons {
