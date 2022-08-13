@@ -4,7 +4,6 @@ import { useState } from "react";
 import DarkMode from "./DarkMode";
 
 import searchIcon from "../assets/search.svg";
-import rightArrow from "../assets/right-arrow.jpg";
 
 export default function Navbar() {
   const [isFocused, setIsFocused] = useState(false);
