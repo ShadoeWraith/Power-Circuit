@@ -4,6 +4,7 @@ import { useState } from "react";
 import DarkMode from "./DarkMode";
 
 import searchIcon from "../assets/search.svg";
+import rightArrow from "../assets/right-arrow.jpg";
 
 export default function Navbar() {
   const [isFocused, setIsFocused] = useState(false);
@@ -40,16 +41,42 @@ export default function Navbar() {
           <DarkMode />
         </div>
       </div>
-      <ul className="nav-categories">
-        <li>Home Favorites</li>
-        <li>Jewlery &amp; Accessories</li>
-        <li>Clothing &amp; Shoes</li>
-        <li>Home &amp; Living</li>
-        <li>Wedding &amp; Party</li>
-        <li>Toys &amp; Entertainment</li>
-        <li>Art &amp; Collectibles</li>
-        <li>Craft Supplies</li>
-        <li>Gifts &amp; Gift Cards</li>
+      <ul className="nav-dropdown">
+        <li>
+          <a href="/">PC Parts</a>
+          <div className="dropdown-menu">
+            <a href="/">Processors/CPUs</a>
+            <a href="/">Grahpics Cards</a>
+            <a href="/">motherboards</a>
+            <a href="/">Drives &amp; Storage</a>
+            <a href="/">Computer Memory</a>
+            <a href="/">Desktop Cases</a>
+            <a href="/">Power Supplies</a>
+            <a href="/">Air &amp; Water Cooling</a>
+          </div>
+        </li>
+        <li>
+          <a href="/">Computers</a>
+          <div className="dropdown-menu">
+            <a href="/">Desktop Computers</a>
+            <a href="/">Laptop/Notebooks</a>
+          </div>
+        </li>
+        <li>
+          <a href="/">Apple</a>
+          <div className="dropdown-menu">
+            <a href="/">Macbook</a>
+            <a href="/">Mac Desktops</a>
+            <a href="/">iPad</a>
+            <a href="/">Apple Watch</a>
+            <a href="/">AirPods</a>
+            <a href="/">Beats</a>
+            <a href="/">Accessories</a>
+          </div>
+        </li>
+        <li>
+          <a href="/">Help</a>
+        </li>
       </ul>
     </nav>
   );
