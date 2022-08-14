@@ -1,12 +1,36 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import DarkMode from "./DarkMode";
+import React, { useEffect, useState } from "react";
 
+import { useStoreContext } from "../utils/GlobalState";
+import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from "../utils/actions";
+import { QUERY_CATEGORIES } from "../utils/queries";
+import { useQuery } from "@apollo/client";
+
+import DarkMode from "./DarkMode";
 import searchIcon from "../assets/search.svg";
 
 export default function Navbar() {
   const [isFocused, setIsFocused] = useState(false);
+  const [state, dispatch] = useStoreContext();
+  const {categories} = state;
+  const {loading, data: categoryData} = useQuery(QUERY_CATEGORIES);
+
+  useEffect(() => {
+    if (categoryData) {
+      dispatch({
+        type: UPDATE_CATEGORIES,
+        categories: categoryData.categories,
+      });
+    }
+  }, [categoryData, loading, dispatch]);
+
+  const handleClick = (id) => {
+    dispatch({
+      type: UPDATE_CURRENT_CATEGORY,
+      currentCategory: id,
+    });
+  };
 
   return (
     <nav>
