@@ -22,20 +22,16 @@ export default function Navbar() {
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
             ></input>
-            <button
-              type="submit"
-              className={`search-icon ${
-                isFocused ? "isVisible" : "notVisible"
-              }`}
-            >
+            <button type="submit" className="search-icon">
               <img src={searchIcon} alt="search"></img>
             </button>
           </label>
         </div>
         <div className="nav-buttons">
           <button type="button">Sign In</button>
-          <button>
+          <button className="cart">
             <FontAwesomeIcon icon={faShoppingCart} />
+            <span className="cart-number">4</span>
           </button>
           <DarkMode />
         </div>

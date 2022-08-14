@@ -11,7 +11,7 @@ export default function Footer() {
         <a href="/">
           <img src={deploy} alt="linkedin" />
         </a>
-        <h3>Made by three dudes</h3>
+        <h3>Made by two dudes &amp; Kyle</h3>
       </div>
     </footer>
   );
