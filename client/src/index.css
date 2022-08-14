@@ -189,12 +189,23 @@ nav {
 }
 
 .nav-dropdown li {
-  margin: 0 15px;
+  border: 2px solid var(--primary-color);
+  border-bottom: none;
+  padding: 0 5px;
   position: relative;
+}
+
+.nav-dropdown li:first-child {
+  border-top-left-radius: 5px;
+}
+
+.nav-dropdown li:last-child {
+  border-top-right-radius: 5px;
 }
 
 .nav-dropdown li:hover {
   cursor: pointer;
+  background-color: var(--secondary-color)
 }
 
 .dropdown-menu {
