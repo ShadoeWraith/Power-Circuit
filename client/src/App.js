@@ -14,7 +14,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-      <Footer />
+
+      <div className="footer-container">
+        <div className="footer-wrap"></div>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
