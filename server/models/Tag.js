@@ -1,28 +1,15 @@
-const { Model, DataTypes } = require('sequelize');
+const mongoose = require('mongoose');
 
-const sequelize = require('../config/connection');
+const { Schema } = mongoose;
 
-class Tag extends Model {}
-
-Tag.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
-    },
-    tag_name: {
-      type: DataTypes.STRING
-    } 
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'tag',
+const tagSchema = new Schema({
+  tagName: {
+    type: String,
+    required: true,
+    trim: true
   }
-);
+});
+
+const Tag = mongoose.model('Tag', tagSchema);
 
 module.exports = Tag;
