@@ -4,7 +4,6 @@ import { useState } from "react";
 import DarkMode from "./DarkMode";
 
 import searchIcon from "../assets/search.svg";
-import rightArrow from "../assets/right-arrow.jpg";
 
 export default function Navbar() {
   const [isFocused, setIsFocused] = useState(false);
@@ -47,7 +46,7 @@ export default function Navbar() {
           <div className="dropdown-menu">
             <a href="/">Processors/CPUs</a>
             <a href="/">Grahpics Cards</a>
-            <a href="/">motherboards</a>
+            <a href="/">Motherboards</a>
             <a href="/">Drives &amp; Storage</a>
             <a href="/">Computer Memory</a>
             <a href="/">Desktop Cases</a>
