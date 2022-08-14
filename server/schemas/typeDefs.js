@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Category {
     _id: ID
     name: String
+    subcategories: [Category]
   }
 
   type Product {
@@ -14,6 +15,12 @@ const typeDefs = gql`
     quantity: Int
     price: Float
     category: Category
+    tags: [Tag]
+  }
+
+  type Tag {
+    _id: ID
+    name: String
   }
 
   type Order {
@@ -49,8 +56,9 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!, isAdmin: Boolean): Auth
     addOrder(products: [ID]!): Order
+    addTag(name: String!): Tag
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth

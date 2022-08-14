@@ -30,7 +30,12 @@ const productSchema = new Schema({
     ref: 'Category',
     required: true
   },
-  tags: [Tag.schema]
+  tags: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Tag'
+    }
+  ]
 });
 
 const Product = mongoose.model('Product', productSchema);
