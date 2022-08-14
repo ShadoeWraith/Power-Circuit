@@ -251,6 +251,47 @@ nav {
   transform: scale(1);
 }
 
+.carousel-root{
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+.carousel{
+  padding-top: 15px;
+  width: 50%;
+  margin: auto;
+}
+
+.slide img{
+  height: 300px;
+}
+
+.carousel .control-dots {
+  background-color: var(--header-color);
+  margin: 0 !important;
+  padding: 5px !important;
+}
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow{
+  background-color: hsl(0 0% 0% / .5 ) !important;
+  height: 100px;
+  top: 35%;
+}
+
+.carousel-slider{
+  margin: auto;
+}
+
+.carousel-status {
+  visibility: hidden;
+}
+
+.thumbs-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 section {
   width: 100%;
   margin: auto;
