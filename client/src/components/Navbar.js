@@ -31,7 +31,7 @@ export default function Navbar() {
           <button type="button">Sign In</button>
           <button className="cart">
             <FontAwesomeIcon icon={faShoppingCart} />
-            <span className="cart-number">4</span>
+            <span className="cart-number">5</span>
           </button>
           <DarkMode />
         </div>

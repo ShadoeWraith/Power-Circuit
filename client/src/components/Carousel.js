@@ -14,6 +14,15 @@ export default function image() {
       <div>
         <img src={graphicsCard} />
       </div>
+      <div>
+        <img src={graphicsCard} />
+      </div>
+      <div>
+        <img src={graphicsCard} />
+      </div>
+      <div>
+        <img src={graphicsCard} />
+      </div>
     </Carousel>
   );
 }
