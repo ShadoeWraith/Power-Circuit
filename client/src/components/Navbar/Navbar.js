@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-import DarkMode from "../DarkMode/DarkMode";
+import DarkMode from "./DarkMode";
 import "./Navbar.css";
 
 import searchIcon from "../../assets/search.svg";
