@@ -206,8 +206,12 @@ nav {
   margin-top: .05em;
 }
 
+.dropdown-menu a:hover {
+  color: var(--header-color);
+}
+
 .dropdown-menu a:hover::before {
-  background-color: var(--tertiary-color)
+  background-color: var(--tertiary-color);
 }
 
 .nav-dropdown li:hover .dropdown-menu{
