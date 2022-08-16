@@ -1,0 +1,78 @@
+@import url("../../index.css");
+
+.card-container {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  outline: .3em solid var(--secondary-color);
+  background-color: var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 1rem;
+}
+
+.card-image {
+  width: 25rem;
+  height: 25rem;
+  transition: ease-out 250ms;
+  opacity: 1;
+}
+
+.card:hover {
+  box-shadow: 1em 1em 1em var(--gray);
+}
+
+.card:hover .card-image {
+  opacity: 0.4;
+}
+
+.card-text {
+  position: absolute;
+  font-size: 4em;
+  color: var(--white);
+  opacity: 0;
+  text-align: center;
+}
+
+.card:hover .card-text {
+  opacity: 1;
+}
+
+.card::after, 
+.card::before {
+  content: " ";
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.25em;
+  left: 1.25em;
+  right: 1.25em;
+}
+
+.card::before {
+  border-top: .25em solid white;
+  border-bottom: .25em solid white;
+  transition: ease-out 250ms;
+  transform: scale(0, 1);
+}
+
+.card::after {
+  border-right: .25em solid white;
+  border-left: .25em solid white;
+  transition: ease-out 250ms;
+  transform: scale(1, 0);
+}
+
+.card:hover::before {
+  transform: scale(1.03, 1);
+}
+
+.card:hover::after {
+  transform: scale(1, 1.03);
+}

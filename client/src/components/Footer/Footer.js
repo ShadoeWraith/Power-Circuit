@@ -1,5 +1,7 @@
-import github from "../assets/github.jpg";
-import deploy from "../assets/deploy.jpg";
+import "./Footer.css";
+
+import github from "../../assets/github.jpg";
+import deploy from "../../assets/deploy.jpg";
 
 export default function Footer() {
   return (

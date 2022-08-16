@@ -1,13 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import DarkMode from "./DarkMode";
 
-import searchIcon from "../assets/search.svg";
+import DarkMode from "../DarkMode/DarkMode";
+import "./Navbar.css";
+
+import searchIcon from "../../assets/search.svg";
 
 export default function Navbar() {
-  const [isFocused, setIsFocused] = useState(false);
-
   return (
     <nav>
       <div className="nav-top">
@@ -16,12 +15,7 @@ export default function Navbar() {
         </a>
         <div className="search-bar">
           <label>
-            <input
-              type="text"
-              placeholder="Search for anything"
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-            ></input>
+            <input type="text" placeholder="Search for anything"></input>
             <button type="submit" className="search-icon">
               <img src={searchIcon} alt="search"></img>
             </button>
