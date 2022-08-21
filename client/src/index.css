@@ -5,9 +5,9 @@
 
 :root {
   --white: hsl(0, 0%, 93%);
-  --gray: hsl(90, 1%, 31%);
+  --gray: hsl(203, 26%, 18%);
   --yellow: hsl(48, 100%, 70%);
-  --green: hsl(170, 40%, 60%);
+  --red: #E54B4B;
   --orange: hsl(1, 85%, 65%);
   --blue: hsl(198, 63%, 38%);
   --card-text: hsl(0, 0%, 0%);
@@ -20,26 +20,29 @@ body {
 }
 
 body.light {
-  --background-color: var(--white);
+  --background-color: var(--gray);
   --primary-color: var(--gray);
   --secondary-color: var(--yellow);
-  --tertiary-color: var(--green);
-  --header-color: var(--orange);
+  --tertiary-color: var(--red);
+  --header-color: var(--white);
 }
 
-body.dark {
+/* body.dark {
   --background-color: var(--gray);
   --primary-color: var(--white);
   --secondary-color: var(--blue);
-  --tertiary-color: var(--green);
+  --tertiary-color: var(--red);
   --header-color: var(--orange);
-}
+} */
 
 a {
   text-decoration: none;
   color: var(--primary-color);
 }
 
+li {
+  list-style: none;
+}
 
 section {
   width: 100%;
