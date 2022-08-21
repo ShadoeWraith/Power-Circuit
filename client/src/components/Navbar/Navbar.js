@@ -52,7 +52,7 @@ export default function Navbar() {
           <button type="button">Sign In</button>
           <button className="cart">
             <FontAwesomeIcon icon={faShoppingCart} />
-            <span className="cart-number">5</span>
+            <span className="cart-number">99</span>
           </button>
           <DarkMode />
         </div>

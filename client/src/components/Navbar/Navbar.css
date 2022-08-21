@@ -191,9 +191,9 @@ nav {
 }
 
 .dropdown-menu a {
-  min-width: max-content;
   color: var(--gray);
   margin-left: .3em;
+  min-width: max-content;
 }
 
 .dropdown-menu a::before {
