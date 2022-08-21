@@ -3,7 +3,6 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import DarkMode from "./DarkMode";
 import "./Navbar.css";
-
 import searchIcon from "../../assets/search.svg";
 
 export default function Navbar() {
@@ -25,7 +24,7 @@ export default function Navbar() {
           <button type="button">Sign In</button>
           <button className="cart">
             <FontAwesomeIcon icon={faShoppingCart} />
-            <span className="cart-number">5</span>
+            <span className="cart-number">99</span>
           </button>
           <DarkMode />
         </div>

@@ -175,7 +175,6 @@ nav {
 
 .dropdown-menu {
   border-top: .2em solid var(--secondary-color);
-  position: relative;
   position: absolute;
   background-color: white;
   color: black;
@@ -187,12 +186,14 @@ nav {
   transform: scale(0);
   z-index: 100;
   transition: ease-out 50ms;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .dropdown-menu a {
-  white-space: nowrap;
   color: var(--gray);
   margin-left: .3em;
+  min-width: max-content;
 }
 
 .dropdown-menu a::before {
