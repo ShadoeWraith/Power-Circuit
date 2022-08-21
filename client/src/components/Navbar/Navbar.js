@@ -8,7 +8,8 @@ import { QUERY_CATEGORIES } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 
 import DarkMode from "./DarkMode";
-import searchIcon from "../assets/search.svg";
+import "./Navbar.css";
+import searchIcon from "../../assets/search.svg";
 
 export default function Navbar() {
   const [isFocused, setIsFocused] = useState(false);
@@ -32,6 +33,7 @@ export default function Navbar() {
     });
   };
 
+
   return (
     <nav>
       <div className="nav-top">
@@ -40,12 +42,7 @@ export default function Navbar() {
         </a>
         <div className="search-bar">
           <label>
-            <input
-              type="text"
-              placeholder="Search for anything"
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-            ></input>
+            <input type="text" placeholder="Search for anything"></input>
             <button type="submit" className="search-icon">
               <img src={searchIcon} alt="search"></img>
             </button>
@@ -55,7 +52,7 @@ export default function Navbar() {
           <button type="button">Sign In</button>
           <button className="cart">
             <FontAwesomeIcon icon={faShoppingCart} />
-            <span className="cart-number">4</span>
+            <span className="cart-number">5</span>
           </button>
           <DarkMode />
         </div>
@@ -99,4 +96,5 @@ export default function Navbar() {
       </ul>
     </nav>
   );
-}
+
+};

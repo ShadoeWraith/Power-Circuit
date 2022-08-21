@@ -1,0 +1,42 @@
+@import url("../../index.css");
+
+.carousel-root{
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+.carousel{
+  padding-top: .75em;
+  width: 25em !important;
+  margin: auto !important;
+}
+
+.slide img{
+  height: fit-content;
+}
+
+.carousel .control-dots {
+  background-color: var(--header-color);
+  margin: 0 !important;
+  padding: .5rem !important;
+}
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow{
+  background-color: hsl(0 0% 0% / .5 ) !important;
+  height: 7rem;
+  top: 27% !important;
+}
+
+.carousel-slider{
+  margin: auto;
+}
+
+.carousel-status {
+  visibility: hidden;
+}
+
+.thumbs-wrapper {
+  display: flex;
+  justify-content: center;
+}

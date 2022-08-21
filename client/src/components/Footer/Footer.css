@@ -1,0 +1,30 @@
+@import url("../../index.css");
+
+.footer-container {
+  position: relative;
+  min-height: 15vh;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  box-shadow: inset 0 .35em .1em -.2em var(--primary-color);
+}
+
+.footer-content img{
+  filter: invert(91%) sepia(9%) saturate(157%) hue-rotate(340deg) brightness(94%) contrast(92%);
+  margin: .75em 1em;
+}
+
+body.light .footer-content img{
+  filter: invert(0%) sepia(94%) saturate(6%) hue-rotate(177deg) brightness(93%) contrast(100%);
+}
+
+body.light .footer-content img:hover, body.dark .footer-content img:hover {
+  filter: invert(46%) sepia(81%) saturate(860%) hue-rotate(322deg) brightness(96%) contrast(98%);
+}

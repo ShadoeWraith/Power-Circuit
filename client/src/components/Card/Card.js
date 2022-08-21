@@ -1,4 +1,6 @@
-import graphicsCardImg from "../assets/graphics-card.jpg";
+import graphicsCardImg from "../../assets/graphics-card.jpg";
+
+import "./Card.css";
 
 export default function Card() {
   return (
