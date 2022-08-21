@@ -53,7 +53,7 @@ export default function Navbar() {
             <span className="cart-number">99</span>
             <span>Cart</span>
           </button>
-          <DarkMode />
+          {/* <DarkMode /> */}
         </div>
       </div>
       <div className="nav-bottom">
