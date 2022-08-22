@@ -1,0 +1,52 @@
+@import url("../../index.css");
+
+.product-section {
+  background-color: var(--secondary-color);
+  width: 90vw;
+  margin: auto;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  width: 90vw;
+  gap: 1em;
+}
+
+.featured-products h2 {
+  color: black;
+  text-align: center;
+}
+
+.product-item, .product-item > * {
+  background-color: white; 
+  color: black;
+  padding: .2rem;
+  border-radius: .3rem;
+}
+
+.product-item:hover {
+  cursor: pointer;
+}
+
+.product-item:hover .product-name{
+  text-decoration: underline;
+}
+
+.product-image {
+  width: 15em;
+}
+
+.product-name {
+  font-weight: lighter;
+  text-align: center;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.5em;
+  padding-left: .7rem;
+}
