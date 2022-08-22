@@ -172,8 +172,7 @@ nav {
 }
 
 .nav-dropdown li {
-  
-  
+  color: black;
   display: grid;
   place-items: center;
   padding: 0 5rem;

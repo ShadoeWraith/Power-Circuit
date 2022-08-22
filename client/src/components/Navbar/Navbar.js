@@ -3,7 +3,10 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState, Link } from "react";
 
 import { useStoreContext } from "../../utils/GlobalState";
-import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from "../../utils/actions";
+import {
+  UPDATE_CATEGORIES,
+  UPDATE_CURRENT_CATEGORY,
+} from "../../utils/actions";
 import { QUERY_CATEGORIES } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
@@ -14,7 +17,7 @@ import searchIcon from "../../assets/search.svg";
 export default function Navbar() {
   // const [state, dispatch] = useStoreContext();
   // const {categories} = state;
-  const {loading, data: categoryData} = useQuery(QUERY_CATEGORIES);
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
   // useEffect(() => {
   //   if (categoryData) {
   //     dispatch({
@@ -57,7 +60,9 @@ export default function Navbar() {
       <div className="nav-bottom">
         <ul className="nav-dropdown">
           {categoryData.categories.map((category) => (
-            <li> {category.name}
+            <li>
+              {" "}
+              {category.name}
               <div className="dropdown-menu">
                 {category.subcategories.map((sub) => (
                   <a>{sub}</a>
