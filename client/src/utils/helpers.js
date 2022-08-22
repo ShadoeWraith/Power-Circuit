@@ -6,7 +6,6 @@ export function pluralize(name, count) {
   }
 
 export function cartCount(cart) {
-
   const itemCount = cart.reduce((total, product) => {
     return total + product.purchaseQuantity;
   }, 0);

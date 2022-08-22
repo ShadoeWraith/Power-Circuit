@@ -4,7 +4,7 @@ const typeDefs = gql`
   type Category {
     _id: ID
     name: String
-    subcategories: [Category]
+    subcategories: [String]
   }
 
   type Product {
