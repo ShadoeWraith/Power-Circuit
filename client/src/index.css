@@ -17,15 +17,20 @@ body {
   background-color: var(--background-color);
   color: var(--primary-color);
   position: relative;
-}
-
-body.light {
   --background-color: var(--gray);
   --primary-color: var(--gray);
   --secondary-color: var(--yellow);
   --tertiary-color: var(--red);
   --header-color: var(--white);
 }
+
+/* body.light {
+  --background-color: var(--gray);
+  --primary-color: var(--gray);
+  --secondary-color: var(--yellow);
+  --tertiary-color: var(--red);
+  --header-color: var(--white);
+} */
 
 /* body.dark {
   --background-color: var(--gray);
@@ -53,4 +58,5 @@ section {
 .page-header {
   margin: 1rem 0;
   text-align: center;
+  color: var(--header-color);
 }
