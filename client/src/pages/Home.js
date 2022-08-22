@@ -9,7 +9,6 @@ export default function Home() {
       {/* <Image /> */}
       <h1 className="page-header"> Popular categories </h1>
       <Card />
-
       <div className="product-section">
         <Product />
       </div>

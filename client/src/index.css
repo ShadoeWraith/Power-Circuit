@@ -8,7 +8,7 @@
   --white: hsl(0, 0%, 93%);
   --gray: hsl(203, 26%, 18%);
   --yellow: hsl(48, 100%, 70%);
-  --red: #E54B4B;
+  --red: hsl(0, 75%, 60%);
   --orange: hsl(1, 85%, 65%);
   --blue: hsl(198, 63%, 38%);
   --card-text: hsl(0, 0%, 0%);
