@@ -13,6 +13,7 @@ import { useQuery } from "@apollo/client";
 import DarkMode from "./DarkMode";
 import "./Navbar.css";
 import searchIcon from "../../assets/search.svg";
+import { urlFormat } from "../../utils/helpers";
 
 export default function Navbar() {
   const [state, dispatch] = useStoreContext();
@@ -65,7 +66,8 @@ export default function Navbar() {
             <li>{" "}{category.name}              
               <div className="dropdown-menu">
                 {category.subcategories.map((sub) => (
-                  <a>{sub}</a>
+                  // <Link to={`/${urlFormat(sub)}`}>{sub}</Link>
+                  <a>{sub}</a>                  
                 ))}
               </div>
             </li>

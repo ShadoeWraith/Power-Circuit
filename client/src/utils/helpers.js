@@ -5,6 +5,11 @@ export function pluralize(name, count) {
     return name + 's';
   }
 
+export function urlFormat(string) {
+  const str = string.replace(/[^a-zA-Z ]/g, "");
+  return str;
+}
+
 export function cartCount(cart) {
   const itemCount = cart.reduce((total, product) => {
     return total + product.purchaseQuantity;
