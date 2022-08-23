@@ -3,7 +3,10 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState, Link } from "react";
 
 import { useStoreContext } from "../../utils/GlobalState";
-import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from "../../utils/actions";
+import {
+  UPDATE_CATEGORIES,
+  UPDATE_CURRENT_CATEGORY,
+} from "../../utils/actions";
 import { QUERY_CATEGORIES } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
@@ -24,6 +27,7 @@ export default function Navbar() {
       });
     }
   }, [categoryData, loading, dispatch]);
+
 
   // const handleClick = (id) => {
   //   dispatch({
@@ -58,7 +62,7 @@ export default function Navbar() {
       <div className="nav-bottom">
         <ul className="nav-dropdown">
           {categories.map((category) => (
-            <li> {category.name}
+            <li>{" "}{category.name}              
               <div className="dropdown-menu">
                 {category.subcategories.map((sub) => (
                   <a>{sub}</a>
