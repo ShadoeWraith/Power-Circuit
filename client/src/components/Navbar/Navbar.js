@@ -12,17 +12,18 @@ import "./Navbar.css";
 import searchIcon from "../../assets/search.svg";
 
 export default function Navbar() {
-  // const [state, dispatch] = useStoreContext();
-  // const {categories} = state;
+  const [state, dispatch] = useStoreContext();
+  const {categories} = state;
+  console.log(categories);
   const {loading, data: categoryData} = useQuery(QUERY_CATEGORIES);
-  // useEffect(() => {
-  //   if (categoryData) {
-  //     dispatch({
-  //       type: UPDATE_CATEGORIES,
-  //       categories: categoryData.categories,
-  //     });
-  //   }
-  // }, [categoryData, loading, dispatch]);
+  useEffect(() => {
+    if (categoryData) {
+      dispatch({
+        type: UPDATE_CATEGORIES,
+        categories: categoryData.categories,
+      });
+    }
+  }, [categoryData, loading, dispatch]);
 
   // const handleClick = (id) => {
   //   dispatch({
@@ -56,7 +57,7 @@ export default function Navbar() {
       </div>
       <div className="nav-bottom">
         <ul className="nav-dropdown">
-          {categoryData.categories.map((category) => (
+          {categories.map((category) => (
             <li> {category.name}
               <div className="dropdown-menu">
                 {category.subcategories.map((sub) => (
