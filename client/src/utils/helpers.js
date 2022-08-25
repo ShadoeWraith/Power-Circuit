@@ -6,8 +6,8 @@ export function pluralize(name, count) {
   }
 
 export function urlFormat(string) {
-  const str = string.replace(/[^a-zA-Z ]/g, "");
-  return str;
+  const str = string.replace(/[^a-zA-Z]/g, "").toLowerCase();
+  return "/" + str;
 }
 
 export function cartCount(cart) {

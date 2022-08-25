@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import React, { useEffect, useState, Link } from "react";
 
+import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import { useStoreContext } from "../../utils/GlobalState";
 import {
   UPDATE_CATEGORIES,
@@ -18,8 +19,8 @@ import { urlFormat } from "../../utils/helpers";
 export default function Navbar() {
   const [state, dispatch] = useStoreContext();
   const {categories} = state;
-  console.log(categories);
   const {loading, data: categoryData} = useQuery(QUERY_CATEGORIES);
+
   useEffect(() => {
     if (categoryData) {
       dispatch({
@@ -30,20 +31,20 @@ export default function Navbar() {
   }, [categoryData, loading, dispatch]);
 
 
-  // const handleClick = (id) => {
-  //   dispatch({
-  //     type: UPDATE_CURRENT_CATEGORY,
-  //     currentCategory: id,
-  //   });
-  // };
+  const handleClick = (str) => {
+    dispatch({
+      type: UPDATE_CURRENT_CATEGORY,
+      currentCategory: str,
+    });
+  };
 
   return (
     <nav>
       <div className="nav-top">
         <div className="search-bar">
-          <a href="/">
+          <Link to="/">
             <h1 className="nav-title">Power⚡Circuit</h1>
-          </a>
+          </Link>
           <label>
             <input type="text" placeholder="Search for anything"></input>
             <button type="submit" className="search-icon">
@@ -62,12 +63,14 @@ export default function Navbar() {
       </div>
       <div className="nav-bottom">
         <ul className="nav-dropdown">
-          {categories.map((category) => (
-            <li>{" "}{category.name}              
+          {categories.map((category, index) => (
+            <li key={index}>{" "}
+              <Link to={urlFormat(category.name)} onClick={() => {handleClick(category.name);}}>
+                {category.name}
+              </Link>              
               <div className="dropdown-menu">
                 {category.subcategories.map((sub) => (
-                  // <Link to={`/${urlFormat(sub)}`}>{sub}</Link>
-                  <a>{sub}</a>                  
+                  <Link to={`${urlFormat(category.name)}${urlFormat(sub)}`} key={sub} onClick={() => {handleClick(sub);}}>{sub} </Link>
                 ))}
               </div>
             </li>

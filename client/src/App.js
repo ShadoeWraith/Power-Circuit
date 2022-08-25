@@ -1,7 +1,6 @@
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Checkout from "./pages/Checkout";
-import Category from "./pages/Category";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -44,7 +43,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/:subCategory" element={<Category />}/> */}
+          <Route path="/:category" element={<Product />}/>
+          <Route path="/:category/:subcategory" element={<Product />}/>
           {/* <Route path="/:subCategory/:product" element={<Product />}/> */}
         </Routes>
 

@@ -18,19 +18,15 @@ query Checkout($products: [ID]!) {
 `;
 
 export const QUERY_PRODUCTS = gql`
-query Products($category: ID) {
-    products(category: $category) {
+{
+    products{
       _id
       name
       description
-      image
       quantity
       price
       category {
         _id
-      }
-      tags {
-        name
       }
     }
   }
