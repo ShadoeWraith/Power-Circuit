@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
 import {
   UPDATE_CATEGORIES,
@@ -18,8 +18,8 @@ import { urlFormat } from "../../utils/helpers";
 
 export default function Navbar() {
   const [state, dispatch] = useStoreContext();
-  const {categories} = state;
-  const {loading, data: categoryData} = useQuery(QUERY_CATEGORIES);
+  const { categories } = state;
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
   useEffect(() => {
     if (categoryData) {
@@ -29,7 +29,6 @@ export default function Navbar() {
       });
     }
   }, [categoryData, loading, dispatch]);
-
 
   const handleClick = (str) => {
     dispatch({
@@ -64,16 +63,29 @@ export default function Navbar() {
       <div className="nav-bottom">
         <ul className="nav-dropdown">
           {categories.map((category, index) => (
-            <li key={index}>{" "}
-              <Link to={urlFormat(category.name)} onClick={() => {handleClick(category.name);}}>
-                {category.name}
-              </Link>              
+            <Link
+              className="nav-category"
+              key={index}
+              to={urlFormat(category.name)}
+              onClick={() => {
+                handleClick(category.name);
+              }}
+            >
+              {category.name}
               <div className="dropdown-menu">
                 {category.subcategories.map((sub) => (
-                  <Link to={`${urlFormat(category.name)}${urlFormat(sub)}`} key={sub} onClick={() => {handleClick(sub);}}>{sub} </Link>
+                  <Link
+                    to={`${urlFormat(category.name)}${urlFormat(sub)}`}
+                    key={sub}
+                    onClick={() => {
+                      handleClick(sub);
+                    }}
+                  >
+                    {sub}{" "}
+                  </Link>
                 ))}
               </div>
-            </li>
+            </Link>
           ))}
         </ul>
       </div>
