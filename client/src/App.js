@@ -5,27 +5,27 @@ import Checkout from "./pages/Checkout";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import { StoreProvider } from './utils/GlobalState';
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+import { StoreProvider } from "./utils/GlobalState";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -40,18 +40,18 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <StoreProvider>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:category" element={<Product />}/>
-          <Route path="/:category/:subcategory" element={<Product />}/>
-          {/* <Route path="/:subCategory/:product" element={<Product />}/> */}
-        </Routes>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/:category" element={<Product />} />
+            <Route path="/:category/:subcategory" element={<Product />} />
+            {/* <Route path="/:subCategory/:product" element={<Product />}/> */}
+          </Routes>
 
-        <div className="footer-container">
-          <div className="footer-wrap"></div>
-          <Footer />
-        </div>
+          <div className="footer-container">
+            <div className="footer-wrap"></div>
+            <Footer />
+          </div>
         </StoreProvider>
       </Router>
     </ApolloProvider>

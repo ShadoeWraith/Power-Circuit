@@ -45,7 +45,7 @@ export default function Navbar() {
             <h1 className="nav-title">Power⚡Circuit</h1>
           </Link>
           <label>
-            <input type="text" placeholder="Search for anything"></input>
+            <input type="text" placeholder="Search"></input>
             <button type="submit" className="search-icon">
               <img src={searchIcon} alt="search"></img>
             </button>

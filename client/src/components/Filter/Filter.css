@@ -1,0 +1,53 @@
+@import url("../../index.css");
+
+.filter-container * {
+  color: black;
+}
+
+.filter-container {
+  margin: 1.5rem 0;
+  padding:.25rem 0;
+  background-color: var(--header-color);
+  width: 20%;
+  height: auto;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.filter-section {
+  position: relative;
+  padding: .15rem 1.25rem;
+}
+
+.filter-section:first-child::before {
+  background-color: transparent;
+}
+
+.filter-section::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: .05rem;
+  background-color: black;
+}
+
+.filter-option {
+  margin: 0 .75rem;
+  width: 100%;
+  padding-bottom: .25rem;
+}
+
+.filter-option *:hover{
+  cursor: pointer;
+}
+
+.filter-checkbox {
+  width: 2rem;
+  height: auto;
+}
+
+.filter-name {
+  font-weight: bold;
+}

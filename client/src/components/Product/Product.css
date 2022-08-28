@@ -4,6 +4,7 @@
   background-color: var(--secondary-color);
   width: 90vw;
   margin: auto;
+  border-radius: 1rem;
 }
 
 .product-container {
@@ -25,7 +26,7 @@
   background-color: white; 
   color: black;
   padding: .2rem;
-  border-radius: .3rem;
+  border-radius: 1rem;
 }
 
 .product-item:hover {

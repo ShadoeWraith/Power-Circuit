@@ -18,6 +18,7 @@
   justify-content: center;
   align-items: center;
   margin: 1rem 1rem;
+  border-radius: 1rem;
 }
 
 .card-image {
@@ -25,6 +26,7 @@
   height: 25rem;
   transition: ease-out 250ms;
   opacity: 1;
+  border-radius: 1rem;
 }
 
 .card:hover {
