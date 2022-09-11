@@ -21,6 +21,17 @@ export default function Navbar() {
   const { categories } = state;
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
+  const mainCategories = categories.filter((c) => {
+    return c.parent === "/";
+  });
+  
+  const navCategories = mainCategories.map((m) => {
+    const sub = categories.filter((c) => {
+      return c.parent.includes(m.name)});
+    const pair = {subCategory: sub};
+    m = {...m, ...pair};
+    return m;
+  });
   useEffect(() => {
     if (categoryData) {
       dispatch({
@@ -64,29 +75,30 @@ export default function Navbar() {
       </div>
       <div className="nav-bottom">
         <ul className="nav-dropdown">
-          {categories.map((category, index) => (
+          {mainCategories.map((category, index) => (
             <div className="nav-category">
+              
               <Link
                 key={index}
-                to={urlFormat(category.name)}
+                to={category.category}
                 onClick={() => {
-                  handleClick(category.name);
+                  handleClick(category.category);
                 }}
               >
                 {category.name}
               </Link>
               <div className="dropdown-menu">
-                {category.subcategories.map((sub, idx) => (
+                {/* {category.subCategory.map((sub, idx) => (
                   <Link
-                    to={`${urlFormat(category.name)}${urlFormat(sub)}`}
+                    to={`${urlFormat(sub.category)}${urlFormat(sub)}`}
                     key={index + "" + idx}
                     onClick={() => {
-                      handleClick(category.name, sub);
+                      handleClick(sub.category, sub);
                     }}
                   >
                     {sub}
                   </Link>
-                ))}
+                ))} */}
               </div>
             </div>
           ))}
