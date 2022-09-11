@@ -41,12 +41,10 @@ export default function Navbar() {
     }
   }, [categoryData, loading, dispatch]);
 
-  const handleClick = (str1, str2 = "") => {
-    console.log(str1, str2);
+  const handleClick = (str1) => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
       currentCategory: str1,
-      currentSubCategory: str2,
     });
   };
 
@@ -75,11 +73,10 @@ export default function Navbar() {
       </div>
       <div className="nav-bottom">
         <ul className="nav-dropdown">
-          {mainCategories.map((category, index) => (
-            <div className="nav-category">
+          {navCategories.map((category, index) => (
+            <div className="nav-category" key={index}>
               
               <Link
-                key={index}
                 to={category.category}
                 onClick={() => {
                   handleClick(category.category);
@@ -88,17 +85,17 @@ export default function Navbar() {
                 {category.name}
               </Link>
               <div className="dropdown-menu">
-                {/* {category.subCategory.map((sub, idx) => (
+                {category.subCategory.map((element, i) => (
                   <Link
-                    to={`${urlFormat(sub.category)}${urlFormat(sub)}`}
-                    key={index + "" + idx}
+                    to={element.category}                    
+                    key={index + "" + i}
                     onClick={() => {
-                      handleClick(sub.category, sub);
+                      handleClick(element.category);
                     }}
                   >
-                    {sub}
+                    {element.name}
                   </Link>
-                ))} */}
+                  ))}
               </div>
             </div>
           ))}

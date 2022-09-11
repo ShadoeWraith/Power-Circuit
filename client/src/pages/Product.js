@@ -12,14 +12,13 @@ export default function Category() {
   const [state, dispatch] = useStoreContext();
   const { currentCategory, currentSubCategory } = state;
   const { loading, data: productData } = useQuery(QUERY_PRODUCTS);
-  console.log(state);
-  //query is being weird have to fix in ../utils/queries.js
+  console.log(productData);
 
   useEffect(() => {
     if (productData) {
       dispatch({
         type: UPDATE_PRODUCTS,
-        products: productData.categoryProducts,
+        products: productData,
       });
     }
   }, [productData, loading, dispatch]);
