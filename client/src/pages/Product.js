@@ -9,19 +9,19 @@ import Filter from "../components/Filter/Filter";
 
 export default function Category() {
   const [state, dispatch] = useStoreContext();
-  const { currentCategory } = state;
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
-  console.log(data);
+  const { currentCategory, currentSubCategory } = state;
+  const { loading, data: productData } = useQuery(QUERY_PRODUCTS);
+  console.log(state);
   //query is being weird have to fix in ../utils/queries.js
 
   useEffect(() => {
-    if (data) {
+    if (productData) {
       dispatch({
         type: UPDATE_PRODUCTS,
-        products: data.categoryProducts,
+        products: productData.categoryProducts,
       });
     }
-  }, [data, loading, dispatch]);
+  }, [productData, loading, dispatch]);
   //
   function filterProducts() {
     if (!currentCategory) {

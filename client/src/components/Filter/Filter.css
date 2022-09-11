@@ -5,6 +5,8 @@
 }
 
 .filter-container {
+  /* position: fixed; */
+  z-index: 10;
   margin: 1.5rem 0;
   padding:.25rem 0;
   background-color: var(--header-color);

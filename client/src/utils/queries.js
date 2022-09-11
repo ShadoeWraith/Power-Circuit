@@ -1,16 +1,16 @@
-import {gql} from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_CATEGORIES = gql`
-query Categories {
-  categories {
-    name
-    subcategories
+  query Categories {
+    categories {
+      name
+      subcategories
+    }
   }
-}
 `;
 
 export const QUERY_CHECKOUT = gql`
-query Checkout($products: [ID]!) {
+  query Checkout($products: [ID]!) {
     checkout(products: $products) {
       session
     }
@@ -18,8 +18,8 @@ query Checkout($products: [ID]!) {
 `;
 
 export const QUERY_PRODUCTS = gql`
-{
-    products{
+  query Products($category: Category) {
+    products {
       _id
       name
       description
