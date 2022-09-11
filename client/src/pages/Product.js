@@ -5,6 +5,7 @@ import { QUERY_PRODUCTS } from "../utils/queries";
 import { UPDATE_PRODUCTS } from "../utils/actions";
 
 import Item from "../components/Item";
+import ProductList from "../components/ProductList/ProductList";
 import Filter from "../components/Filter/Filter";
 
 export default function Category() {
@@ -51,7 +52,8 @@ export default function Category() {
         <>error: no products!</>
       )}
       {loading ? <>loading</> : null}
-      <Filter />
+      <ProductList />
+      {/* <Filter /> */}
     </>
   );
 }
