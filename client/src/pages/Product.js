@@ -39,7 +39,6 @@ export default function Category() {
         categories: window.location.pathname,
       });
     }
-    console.log(state.categories)
     return state.products.filter(
       (product) => product.category.includes(currentCategory)
     );
