@@ -14,6 +14,10 @@ db.once('open', async () => {
     , "parent": "/electronics"
     , "category": "/electronics/embedded"
   }, {
+      "name": "something"
+    , "parent": "/electronics"
+    , "category": "/electronics/something"
+  },{
       "name": "cases"
     , "parent": "/"
     , "category": "/cases"
@@ -37,7 +41,43 @@ db.once('open', async () => {
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
       image: 'cookie-tin.jpg',
-      category: ["/electronics/small"],
+      category: "/electronics/embedded",
+      price: 2.99,
+      quantity: 500
+    },
+    {
+      name: 'Tin of Cookies',
+      description:
+        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+      image: 'cookie-tin.jpg',
+      category: "/electronics/something",
+      price: 2.99,
+      quantity: 500
+    },
+    {
+      name: 'Bronze of Cookies',
+      description:
+        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+      image: 'cookie-tin.jpg',
+      category: "/cases/big",
+      price: 2.99,
+      quantity: 500
+    },
+    {
+      name: 'Bronze of Cookies',
+      description:
+        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+      image: 'cookie-tin.jpg',
+      category: "/cases/big",
+      price: 2.99,
+      quantity: 500
+    },
+    {
+      name: 'Bronze of Cookies',
+      description:
+        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+      image: 'cookie-tin.jpg',
+      category: "/cases/small",
       price: 2.99,
       quantity: 500
     },
@@ -46,7 +86,7 @@ db.once('open', async () => {
       description:
         'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
       image: 'canned-coffee.jpg',
-      category: ["/electronics/big"],
+      category: "/electronics/embedded",
       price: 1.99,
       quantity: 500
     }

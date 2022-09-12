@@ -27,7 +27,7 @@ export default function ProductList() {
             </button>
           </div>
         </div>
-      </div>
+      {/* </div>
       <div className="product-list-container">
         <div className="product">
           <img className="product-image" src={graphicsCard} alt="product" />
@@ -98,7 +98,7 @@ export default function ProductList() {
               Add to cart
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

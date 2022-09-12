@@ -24,10 +24,10 @@ const productSchema = new Schema({
     min: 0,
     default: 0
   },
-  category: [{
+  category: {
     type: String,
     required: true
-  }]
+  }
 });
 
 const Product = mongoose.model('Product', productSchema);

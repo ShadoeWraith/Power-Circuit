@@ -10,6 +10,7 @@ import {
 } from "../../utils/actions";
 import { QUERY_CATEGORIES } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
+import { idbPromise } from "../../utils/helpers";
 
 import DarkMode from "./DarkMode";
 import "./Navbar.css";
@@ -33,18 +34,34 @@ export default function Navbar() {
     return m;
   });
   useEffect(() => {
+    if (!state.currentCategory) {
+      dispatch({
+        type: UPDATE_CURRENT_CATEGORY,
+        currentCategory: window.location.pathname,
+      });
+    }
     if (categoryData) {
       dispatch({
         type: UPDATE_CATEGORIES,
         categories: categoryData.categories,
       });
+      categoryData.categories.forEach((category) => {
+        idbPromise('categories', 'put', category);
+      });
+    } else if (!loading) {
+      idbPromise('categories', 'get').then((categories) => {
+        dispatch({
+          type: UPDATE_CATEGORIES,
+          categories: categories,
+        });
+      });
     }
   }, [categoryData, loading, dispatch]);
 
-  const handleClick = (str1) => {
+  const handleClick = (str) => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
-      currentCategory: str1,
+      currentCategory: str,
     });
   };
 

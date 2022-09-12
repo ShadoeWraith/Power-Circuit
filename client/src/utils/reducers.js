@@ -12,12 +12,12 @@ import {
 } from "./actions";
 
 export const reducer = (state, action) => {
-  console.log(action);
+  
   switch (action.type) {
     case UPDATE_PRODUCTS:
       return {
         ...state,
-        products: [...action.products],
+        products: [...action.products], //...action.products
       };
 
     case ADD_TO_CART:
