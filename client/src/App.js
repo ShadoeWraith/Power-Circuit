@@ -1,6 +1,5 @@
 import Home from "./pages/Home";
 import Product from "./pages/Product";
-import Checkout from "./pages/Checkout";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
